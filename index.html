@@ -3,44 +3,60 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Feliz Dia das Mães ❤️</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-    rel="stylesheet"/>
+    <title>Feliz Dia das Mães 💖</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="particles">
-        <div class="romantic-bg">
-            <span class="heart-float">❤</span>
-            <span class="heart-float">❤</span>
-            <span class="heart-float">❤</span>
-            <span class="heart-float">❤</span>
-            <span class="heart-float">❤</span>
-            <span class="heart-float">❤</span>
-            <div class="flower flower1">🌹</div>
-            <div class="flower flower2">🌸</div>
-            <div class="flower flower3">💐</div>
-            <div class="flower flower4">🌺</div>
-        </div>
+    <div class="background-blur blur-1"></div>
+    <div class="background-blur blur-2"></div>
+    <div class="floating flower-a">🌷</div>
+    <div class="floating flower-b">🌸</div>
+    <div class="floating flower-c">💐</div>
+    <div class="floating flower-d">🌺</div>
+    <div class="floating heart heart-1">❤</div>
+    <div class="floating heart heart-2">❤</div>
+    <div class="floating heart heart-3">❤</div>
+
+    <div class="hearts-container">
+        <span class="heart-up">❤</span>
+        <span class="heart-up">❤</span>
+        <span class="heart-up">❤</span>
+        <span class="heart-up">❤</span>
+        <span class="heart-up">❤</span>
+        <span class="heart-up">❤</span>
     </div>
 
     <main class="container">
-    <div class="card" id="card">
-        <div class="front side">
-            <h1>Feliz Dia das Mães 💐</h1>
-            <p class="subtitle">Você merece o mundo inteiro.</p>
-            <button id="openBtn">Abrir Mensagem</button>
+        <div class="card" id="card">
+            <div class="shine"></div>
+            <div class="front side">
+                <h1>
+                    Feliz Dia das Mães <br><br>💐<br><br>
+                </h1>
+                <p class="subtitle">
+                    Você merece o mundo inteiro.
+                </p>
+                <button id="openBtn">
+                    Abrir Mensagem
+                </button>
+            </div>
+            <div class="back side">
+                <h2>
+                    Para a melhor mãe ❤️
+                </h2>
+                <p id="typingText"></p>
+                <div class="big-heart">
+                    ❤️
+                </div>
+                <button id="backBtn">
+                    Voltar
+                </button>
+            </div>
         </div>
-        <div class="back side">
-            <h2>Para a melhor mãe ❤️</h2>
-            <p id="typingText"></p>
-            <div class="heart">❤️</div>
-            <button id="backBtn">Voltar</button>
-        </div>
-    </div>
     </main>
 
     <script src="script.js"></script>

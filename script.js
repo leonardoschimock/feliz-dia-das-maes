@@ -1,6 +1,7 @@
 const card = document.getElementById("card");
 
 const openBtn = document.getElementById("openBtn");
+
 const backBtn = document.getElementById("backBtn");
 
 const typingText = document.getElementById("typingText");
@@ -23,29 +24,28 @@ let i = 0;
 
 function typeWriter(){
 
-if(i < message.length){
+    if(i < message.length){
 
-    typingText.innerHTML += message.charAt(i);
+        typingText.innerHTML += message.charAt(i);
 
-    i++;
+        i++;
 
-    setTimeout(typeWriter, 35);
-}
+        setTimeout(typeWriter, 35);
+    }
 }
 
 openBtn.addEventListener("click", () => {
 
-card.classList.add("flip");
+    card.classList.add("flip");
 
-typingText.innerHTML = "";
-i = 0;
+    typingText.innerHTML = "";
 
-setTimeout(typeWriter, 600);
+    i = 0;
 
+    setTimeout(typeWriter, 700);
 });
 
 backBtn.addEventListener("click", () => {
 
-card.classList.remove("flip");
-
+    card.classList.remove("flip");
 });
