@@ -1,51 +1,58 @@
 const card = document.getElementById("card");
-
 const openBtn = document.getElementById("openBtn");
-
 const backBtn = document.getElementById("backBtn");
-
 const typingText = document.getElementById("typingText");
 
-const message =
-`Mãe,
-
+const message = `Mãe,
 obrigado por tudo que você faz todos os dias.
-
 Obrigado pelo carinho, pela força,
 pela paciência e por nunca desistir de mim.
-
 Você é meu porto seguro,
 minha inspiração
 e uma das pessoas mais importantes da minha vida.
-
 Eu te amo infinitamente. ❤️`;
 
-let i = 0;
+let index = 0;
+let typingInterval;
 
 function typeWriter(){
 
-    if(i < message.length){
+    clearInterval(typingInterval);
 
-        typingText.innerHTML += message.charAt(i);
+    typingText.innerHTML = "";
 
-        i++;
+    index = 0;
 
-        setTimeout(typeWriter, 35);
-    }
+    typingInterval = setInterval(() => {
+
+        if(index < message.length){
+
+            typingText.innerHTML += message.charAt(index);
+
+            index++;
+
+        } else {
+
+            clearInterval(typingInterval);
+        }
+
+    }, 30);
 }
 
 openBtn.addEventListener("click", () => {
 
     card.classList.add("flip");
 
-    typingText.innerHTML = "";
+    setTimeout(() => {
 
-    i = 0;
+        typeWriter();
 
-    setTimeout(typeWriter, 700);
+    }, 500);
 });
 
 backBtn.addEventListener("click", () => {
 
     card.classList.remove("flip");
+
+    clearInterval(typingInterval);
 });
