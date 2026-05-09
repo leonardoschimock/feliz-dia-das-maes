@@ -37,9 +37,21 @@ openBtn.addEventListener("click", () => {
     setTimeout(() => {
         typeWriter();
     }, 500);
+
 });
 
 backBtn.addEventListener("click", () => {
     card.classList.remove("flip");
     clearInterval(typingInterval);
+
+});
+
+document.addEventListener("gesturestart", function(e){
+    e.preventDefault();
+});
+
+document.addEventListener("dblclick", function(e){
+    e.preventDefault();
+}, {
+    passive:false
 });
