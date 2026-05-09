@@ -10,7 +10,7 @@ html{
 }
 
 body{
-    min-height:100dvh;
+    min-height:100vh;
     overflow:hidden;
     display:flex;
     justify-content:center;
@@ -18,14 +18,33 @@ body{
     position:relative;
     font-family:'Poppins',sans-serif;
     background:
-        radial-gradient(circle at top, #ff4d6d 0%, transparent 30%),
-        radial-gradient(circle at bottom right, #ff758f 0%, transparent 35%),
+        radial-gradient(circle at top, #ff4d6d 0%, transparent 25%),
+        radial-gradient(circle at bottom right, #ff758f 0%, transparent 30%),
         linear-gradient(160deg,#2b000d,#460b1d,#140006);
     padding:
         env(safe-area-inset-top)
         16px
         env(safe-area-inset-bottom);
     touch-action:manipulation;
+}
+
+body::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:min(92vw,720px);
+    height:100vh;
+    background:
+        radial-gradient(
+            ellipse at top,
+            rgba(255,77,109,.32),
+            rgba(255,77,109,0)
+        );
+    filter:blur(12px);
+    pointer-events:none;
+    z-index:0;
 }
 
 .romantic-bg{
@@ -41,24 +60,24 @@ body{
     position:absolute;
     border-radius:50%;
     filter:blur(100px);
-    opacity:.45;
+    opacity:.35;
     animation:ambientMove 8s infinite alternate ease-in-out;
 }
 
 .romantic-bg::before{
-    width:260px;
-    height:260px;
+    width:240px;
+    height:240px;
     background:#ff0a54;
-    top:-80px;
-    left:-80px;
+    top:-90px;
+    left:-90px;
 }
 
 .romantic-bg::after{
     width:240px;
     height:240px;
     background:#ff4d6d;
-    bottom:-80px;
-    right:-80px;
+    bottom:-90px;
+    right:-90px;
 }
 
 @keyframes ambientMove{
@@ -66,48 +85,48 @@ body{
         transform:translateY(0px);
     }
     to{
-        transform:translateY(25px);
+        transform:translateY(20px);
     }
 }
 
 .heart-float{
     position:absolute;
     bottom:-100px;
-    color:rgba(255,255,255,0.18);
+    color:rgba(255,255,255,0.12);
     animation:
         heartsUp linear infinite,
         heartsSide ease-in-out infinite;
 }
 
 .heart-float:nth-child(1){
-    left:5%;
+    left:6%;
     font-size:18px;
     animation-duration:9s;
 }
 
 .heart-float:nth-child(2){
-    left:20%;
+    left:22%;
     font-size:30px;
     animation-duration:13s;
     animation-delay:2s;
 }
 
 .heart-float:nth-child(3){
-    left:42%;
+    left:43%;
     font-size:22px;
     animation-duration:11s;
     animation-delay:4s;
 }
 
 .heart-float:nth-child(4){
-    left:65%;
-    font-size:36px;
+    left:66%;
+    font-size:34px;
     animation-duration:15s;
 }
 
 .heart-float:nth-child(5){
     left:82%;
-    font-size:26px;
+    font-size:24px;
     animation-duration:12s;
     animation-delay:5s;
 }
@@ -121,7 +140,7 @@ body{
         opacity:1;
     }
     to{
-        transform:translateY(-120dvh);
+        transform:translateY(-120vh);
         opacity:0;
     }
 }
@@ -143,33 +162,33 @@ body{
     z-index:1;
     opacity:.9;
     filter:
-        drop-shadow(0 0 8px rgba(255,255,255,.2));
+        drop-shadow(0 0 8px rgba(255,255,255,.15));
     animation:flowerFloat 4s infinite ease-in-out;
 }
 
 .flower1{
-    top:7%;
-    left:4%;
+    top:8%;
+    left:5%;
     font-size:34px;
 }
 
 .flower2{
     top:10%;
     right:5%;
-    font-size:40px;
+    font-size:38px;
     animation-delay:1s;
 }
 
 .flower3{
     bottom:8%;
     left:5%;
-    font-size:38px;
+    font-size:36px;
     animation-delay:2s;
 }
 
 .flower4{
-    bottom:6%;
-    right:4%;
+    bottom:7%;
+    right:5%;
     font-size:34px;
     animation-delay:1.5s;
 }
@@ -203,9 +222,8 @@ body{
 }
 
 .card{
-    width:min(390px, 92vw);
-    height:min(700px, 85dvh);
-    min-height:580px;
+    width:min(92vw,520px);
+    aspect-ratio:9/14;
     position:relative;
     transform-style:preserve-3d;
     transition:1s cubic-bezier(.68,-0.55,.27,1.55);
@@ -219,9 +237,9 @@ body{
     position:absolute;
     width:100%;
     height:100%;
-    border-radius:32px;
+    border-radius:34px;
     overflow:hidden;
-    padding:32px 24px;
+    padding:38px 28px;
     display:flex;
     flex-direction:column;
     justify-content:center;
@@ -231,15 +249,15 @@ body{
     background:
         linear-gradient(
         145deg,
-        rgba(255,255,255,.12),
-        rgba(255,255,255,.04)
+        rgba(255,255,255,.10),
+        rgba(255,255,255,.03)
         );
     backdrop-filter:blur(18px);
     border:
-        1px solid rgba(255,255,255,.15);
+        1px solid rgba(255,255,255,.12);
     box-shadow:
-        0 15px 45px rgba(0,0,0,.5),
-        inset 0 0 25px rgba(255,255,255,.04);
+        0 20px 60px rgba(0,0,0,.45),
+        inset 0 0 25px rgba(255,255,255,.03);
 }
 
 .side::before{
@@ -250,7 +268,7 @@ body{
     background:
         radial-gradient(
         circle,
-        rgba(255,255,255,.16),
+        rgba(255,255,255,.12),
         transparent
         );
     top:-60px;
@@ -260,20 +278,21 @@ body{
 
 .front h1{
     color:white;
-    font-size:2.3rem;
-    line-height:1.15;
-    margin-bottom:18px;
+    font-size:clamp(2.4rem,4vw,4rem);
+    line-height:1.05;
+    margin-bottom:22px;
     text-shadow:
-        0 5px 20px rgba(0,0,0,.4);
+        0 5px 20px rgba(0,0,0,.35);
     animation:fadeDown .8s ease;
+    max-width:420px;
 }
 
 .subtitle{
     color:#ffe5ec;
-    line-height:1.8;
-    font-size:1rem;
-    max-width:290px;
-    margin-bottom:34px;
+    line-height:1.7;
+    font-size:1.08rem;
+    max-width:320px;
+    margin-bottom:42px;
     animation:fadeUp 1.1s ease;
 }
 
@@ -283,8 +302,8 @@ body{
 
 .back h2{
     color:white;
-    font-size:2rem;
-    margin-bottom:22px;
+    font-size:2.2rem;
+    margin-bottom:24px;
 }
 
 .back p{
@@ -294,15 +313,16 @@ body{
     overflow-y:auto;
     padding-right:4px;
     min-height:180px;
+    max-width:360px;
 }
 
 button{
     width:100%;
-    max-width:270px;
+    max-width:280px;
     margin-top:28px;
     border:none;
     border-radius:999px;
-    padding:16px 24px;
+    padding:17px 24px;
     background:
         linear-gradient(
         135deg,
@@ -314,8 +334,12 @@ button{
     font-weight:600;
     cursor:pointer;
     box-shadow:
-        0 10px 25px rgba(255,77,109,.45);
+        0 10px 30px rgba(255,77,109,.38);
     transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-2px);
 }
 
 button:active{
@@ -375,32 +399,51 @@ button:active{
     }
 }
 
-@media(min-width:768px){
+@media(max-width:768px){
     .card{
-        max-width:500px;
-        height:700px;
+        width:min(92vw,390px);
     }
+
     .side{
-        padding:42px 34px;
+        padding:32px 24px;
     }
+
     .front h1{
-        font-size:3rem;
+        font-size:2.6rem;
     }
+
     .subtitle{
-        font-size:1.1rem;
-        max-width:340px;
+        font-size:1rem;
     }
+
     .flower{
-        font-size:50px !important;
+        font-size:34px !important;
     }
 }
 
-@media(min-width:1200px){
-    .card{
-        max-width:540px;
-        height:720px;
+@media(max-width:480px){
+    body{
+        padding:20px 14px;
     }
+
+    .card{
+        width:100%;
+        max-width:360px;
+    }
+
+    .side{
+        border-radius:30px;
+    }
+
     .front h1{
-        font-size:3.4rem;
+        font-size:2.2rem;
+    }
+
+    .subtitle{
+        margin-bottom:34px;
+    }
+
+    button{
+        max-width:100%;
     }
 }
